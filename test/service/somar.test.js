@@ -16,7 +16,7 @@ describe('Testando função somar', () => {
     it('CT02 - Somar uma letra e um número (a+2)', () => {
         const result = () => servicoExercicio.Somar("a", 3);
 
-        expect(result).toThrowError("Somente é possível somar com números nos paramêtros");
+        expect(result).toThrowError("Somente é possível realizar operações com números nos parâmetros");
     });
 
     it('CT03 - Somar um número negativo e um positivo (-1+3)', () => {

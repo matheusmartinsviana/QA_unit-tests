@@ -16,7 +16,7 @@ describe('Testando função subtrair', () => {
     it('CT02 - Subtrair uma letra e um número (a-2)', () => {
         const result = () => servicoExercicio.Subtrair("a", 2);
 
-        expect(result).toThrowError("Somente é possível subtrair com números nos paramêtros");
+        expect(result).toThrowError("Somente é possível realizar operações com números nos parâmetros");
     });
 
     it('CT03 - Subtrair um número negativo e um positivo (-1-3)', () => {

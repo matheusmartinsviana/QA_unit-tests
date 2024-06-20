@@ -16,7 +16,7 @@ describe('Testando função dividir', () => {
     it('CT02 - Dividir uma letra e um número (a/2)', () => {
         const result = () => servicoExercicio.Dividir("a", 3);
 
-        expect(result).toThrowError("Somente é possível dividir com números nos paramêtros");
+        expect(result).toThrowError("Somente é possível realizar operações com números nos parâmetros");
     });
 
     it('CT03 - Dividir um número negativo e um positivo (-1/3)', () => {

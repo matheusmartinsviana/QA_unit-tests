@@ -38,10 +38,10 @@ describe('Teste de API para ExercicioController - Função Dividir', () => {
         expect(response.body).toEqual({ message: "Erro ao dividir" });
     })
 
-    it('POST /dividir com a divisão com os dois números zerados deve retornar 0', async () => {
+    it('POST /dividir com a divisão com um numero positivo e 0 deve retornar 0', async () => {
         const response = await request(app)
             .post('/api/dividir')
-            .send({ num1: 0, num2: 0 });
+            .send({ num1: 2, num2: 0 });
     
         expect(response.statusCode).toBe(200);
         expect(response.body).toEqual({ result: 0});

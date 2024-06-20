@@ -16,7 +16,7 @@ describe('Testando função multiplicar', () => {
     it('CT02 - Multiplicar uma letra e um número (a*2)', () => {
         const result = () => servicoExercicio.Multiplicar("a", 3);
 
-        expect(result).toThrowError("Somente é possível multiplicar com números nos paramêtros");
+        expect(result).toThrowError("Somente é possível realizar operações com números nos parâmetros");
     });
 
     it('CT03 - Multiplicar um número negativo e um positivo (-1*3)', () => {
@@ -25,7 +25,7 @@ describe('Testando função multiplicar', () => {
         expect(result).toBe(-3);
     });
 
-    it('CT03 - Multiplicar um valor null e um positivo (null*3)', () => {
+    it('CT04 - Multiplicar um valor null e um positivo (null*3)', () => {
         const result = () => servicoExercicio.Multiplicar(null, 3);
 
         expect(result).toThrowError("Você deve preencher todos os paramêtros");
