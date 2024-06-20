@@ -23,9 +23,19 @@ describe('Teste de API para ExercicioController - Função multiplicar', () => {
     it('POST /multiplicar com a multiplicação de uma letra e um número deve retornar um erro', async () => {
         const response = await request(app)
             .post('/api/multiplicar')
+            .send({ num1: null, num2: -2 });
+    
+        expect(response.statusCode).toBe(500);
+        expect(response.body).toEqual({ message: "Erro ao multiplicar" });
+    })
+
+    it('POST /multiplicar com a multiplicação de um valor null e um número positivo deve retornar um erro', async () => {
+        const response = await request(app)
+            .post('/api/multiplicar')
             .send({ num1: 'a', num2: -2 });
     
         expect(response.statusCode).toBe(500);
         expect(response.body).toEqual({ message: "Erro ao multiplicar" });
     })
+    
 })

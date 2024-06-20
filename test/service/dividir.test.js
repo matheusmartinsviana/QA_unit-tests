@@ -24,4 +24,22 @@ describe('Testando função dividir', () => {
 
         expect(result).toBe(-2);
     });
+
+    it('CT04 - Dividir um número decimal e um positivo (1.5/2)', () => {
+        const result = servicoExercicio.Dividir(1.5, 2);
+
+        expect(result).toBe(0.75);
+    });
+
+    it('CT05 - Dividir 0 e um positivo (0/2)', () => {
+        const result = servicoExercicio.Dividir(0, 2);
+
+        expect(result).toBe(0);
+    });
+
+    it('CT06 - Dividir um valor null e um positivo (0/2)', () => {
+        const result = () => servicoExercicio.Dividir(null, 2);
+
+        expect(result).toThrowError("Você deve preencher todos os paramêtros");
+    });
 });

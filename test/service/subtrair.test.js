@@ -7,7 +7,7 @@ describe('Testando função subtrair', () => {
         servicoExercicio = new ServicoExercicio();
     });
 
-    it('CT01 - Subtrair dois números positivos (2 - 2)', () => {
+    it('CT01 - Subtrair dois números positivos (2-2)', () => {
         const result = servicoExercicio.Subtrair(2, 2);
 
         expect(result).toBe(0);
@@ -23,5 +23,11 @@ describe('Testando função subtrair', () => {
         const result = servicoExercicio.Subtrair(-1, 3);
 
         expect(result).toBe(-4);
+    });
+
+    it('CT04 - Subtrair um valor null e um positivo (null-3)', () => {
+        const result = () => servicoExercicio.Subtrair(null, 3);
+
+        expect(result).toThrowError("Você deve preencher todos os paramêtros");
     });
 });

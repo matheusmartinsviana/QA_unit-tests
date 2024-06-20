@@ -23,7 +23,16 @@ describe('Teste de API para ExercicioController - Função Subtrair', () => {
     it('POST /subtrair com a subtração de uma letra e um número deve retornar um erro', async () => {
         const response = await request(app)
             .post('/api/subtrair')
-            .send({ num1: 'a', num2: -2 });
+            .send({ num1: 'a', num2: 2 });
+    
+        expect(response.statusCode).toBe(500);
+        expect(response.body).toEqual({ message: "Erro ao subtrair" });
+    })
+
+    it('POST /subtrair com a subtração de um valor null e um número positivo deve retornar um erro', async () => {
+        const response = await request(app)
+            .post('/api/subtrair')
+            .send({ num1: null, num2: 2 });
     
         expect(response.statusCode).toBe(500);
         expect(response.body).toEqual({ message: "Erro ao subtrair" });

@@ -24,4 +24,10 @@ describe('Testando função multiplicar', () => {
 
         expect(result).toBe(-3);
     });
+
+    it('CT03 - Multiplicar um valor null e um positivo (null*3)', () => {
+        const result = () => servicoExercicio.Multiplicar(null, 3);
+
+        expect(result).toThrowError("Você deve preencher todos os paramêtros");
+    });
 });

@@ -28,4 +28,13 @@ describe('Teste de API para ExercicioController - Função Somar', () => {
         expect(response.statusCode).toBe(500);
         expect(response.body).toEqual({ message: "Erro ao somar" });
     })
+
+    it('POST /somar com a soma de um valor null e um número positivo deve retornar um erro', async () => {
+        const response = await request(app)
+            .post('/api/somar')
+            .send({ num1: null, num2: -2 });
+    
+        expect(response.statusCode).toBe(500);
+        expect(response.body).toEqual({ message: "Erro ao somar" });
+    })
 })

@@ -24,4 +24,10 @@ describe('Testando função somar', () => {
 
         expect(result).toBe(2);
     });
+
+    it('CT04 - Somar um valor null e um positivo (null+3)', () => {
+        const result = () => servicoExercicio.Somar(null, 3);
+
+        expect(result).toThrowError("Você deve preencher todos os paramêtros");
+    });
 });
